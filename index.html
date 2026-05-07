@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Engineer OS // NovaKitt3n</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="bg-grid"></div>
+  <div class="orb orb-pink"></div>
+  <div class="orb orb-blue"></div>
+
+  <button id="navToggle" class="nav-toggle" aria-label="Open navigation menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <div id="navBackdrop" class="nav-backdrop"></div>
+
+  <aside id="sideNav" class="side-nav" aria-label="AI Engineer OS navigation">
+    <div class="side-nav-header">
+      <p class="eyebrow">jump menu</p>
+      <h2>AI Engineer OS</h2>
+      <button id="navClose" class="nav-close" aria-label="Close navigation menu">×</button>
+    </div>
+
+    <nav class="nav-links">
+      <button class="nav-link active" data-page="codecademyPage">
+        <span>📚</span>
+        Codecademy AI Engineer Career Path
+      </button>
+
+      <button class="nav-link" data-page="companionPage">
+        <span>🛠️</span>
+        Nova Companion Syllabus
+      </button>
+
+      <button class="nav-link" data-page="frameworkPage">
+        <span>🧬</span>
+        Master vs Complete Framework
+      </button>
+    </nav>
+
+    <p class="nav-note">
+      Progress saves locally in this browser. Export/import when switching machines.
+    </p>
+  </aside>
+
+  <div class="app-shell">
+    <header class="hero">
+      <p class="eyebrow">n0v4.ai_engineer_path // status: booting ⚡</p>
+      <h1 class="glitch-title" data-text="AI Engineer OS">AI Engineer OS</h1>
+      <p class="subtitle">
+        Codecademy progress tracker + companion project forge + job-relevance radar.
+      </p>
+
+      <div class="hero-actions">
+        <button id="resetBtn" class="danger-btn">Reset Progress</button>
+        <button id="exportBtn">Export Progress</button>
+        <label class="import-label">
+          Import Progress
+          <input id="importInput" type="file" accept="application/json" />
+        </label>
+      </div>
+    </header>
+
+    <section class="dashboard-grid">
+      <article class="stat-card">
+        <span class="stat-icon">🧠</span>
+        <div>
+          <h2 id="overallPercent">0%</h2>
+          <p>Overall Progress</p>
+        </div>
+        <div class="bar">
+          <div id="overallBar" class="bar-fill"></div>
+        </div>
+      </article>
+
+      <article class="stat-card">
+        <span class="stat-icon">📚</span>
+        <div>
+          <h2 id="codecademyPercent">0%</h2>
+          <p>Codecademy Path</p>
+        </div>
+        <div class="bar">
+          <div id="codecademyBar" class="bar-fill"></div>
+        </div>
+      </article>
+
+      <article class="stat-card">
+        <span class="stat-icon">🛠️</span>
+        <div>
+          <h2 id="companionPercent">0%</h2>
+          <p>Companion Builds</p>
+        </div>
+        <div class="bar">
+          <div id="companionBar" class="bar-fill"></div>
+        </div>
+      </article>
+
+      <article class="stat-card">
+        <span class="stat-icon">💾</span>
+        <div>
+          <h2 id="completedCount">0</h2>
+          <p>Items Completed</p>
+          <div class="mini-note">Saved locally in this browser</div>
+        </div>
+      </article>
+    </section>
+
+    <main id="contentWindow" class="content-window">
+      <section id="codecademyPage" class="page active">
+        <section class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">main quest</p>
+              <h2>Codecademy AI Engineer Career Path</h2>
+            </div>
+            <p class="chip">certificate track</p>
+          </div>
+          <div id="codecademyModules" class="module-grid"></div>
+        </section>
+      </section>
+
+      <section id="companionPage" class="page">
+        <section class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">side quests that become portfolio gold</p>
+              <h2>Nova Companion Syllabus</h2>
+            </div>
+            <p class="chip">real-world build track</p>
+          </div>
+          <div id="companionModules" class="module-grid"></div>
+        </section>
+      </section>
+
+      <section id="frameworkPage" class="page">
+        <section class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">skill radar</p>
+              <h2>Master vs Complete Framework</h2>
+            </div>
+            <p class="chip">strategy filter</p>
+          </div>
+
+          <div class="framework-grid">
+            <div class="framework-card master">
+              <h3>MASTER 🧬</h3>
+              <p>Python project structure, APIs, JSON, Git/GitHub, PyTorch basics, embeddings, RAG, evals, Streamlit, debugging, AI security.</p>
+            </div>
+
+            <div class="framework-card understand">
+              <h3>UNDERSTAND WELL 🧠</h3>
+              <p>MLPs, CNNs, transformers, BERT/GPT/CLIP, prompt engineering, monitoring, optimization, LangChain basics, agent workflows.</p>
+            </div>
+
+            <div class="framework-card complete">
+              <h3>COMPLETE + MOVE ON 🏃‍♀️</h3>
+              <p>MNIST-only demos, older RNN-heavy examples, course-only syntax patterns, basic toy notebooks, manual math rabbit holes.</p>
+            </div>
+
+            <div class="framework-card skip">
+              <h3>SKIP EXTRA STUDY 🕳️</h3>
+              <p>Memorizing every architecture detail, outdated APIs, tutorial-copy projects, prompt tricks without evaluation, global package chaos.</p>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <p>Built by NovaKitt3n // smart is the aesthetic // tiny raccoon fires monitored 🦝🔥</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
