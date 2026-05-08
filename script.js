@@ -224,6 +224,57 @@ const codecademyModules = [
   }
 ];
 
+const lessonBreakdownModules = [
+  {
+    id: "lesson_nn_arch_intro",
+    title: "Lesson Detail: Introduction to Neural Network Architectures",
+    mastery: "understand",
+    relevance: "foundational",
+    tasks: [
+      "Welcome",
+      "What is a Neural Network Architecture?",
+      "Profiling Size, Latency, and Memory in PyTorch",
+      "Feedforward Neural Networks: Multi-Layer Perceptron",
+      "Generating Inferences",
+      "Activation and Normalization Layers",
+      "Convolutional Neural Networks: Processing Images",
+      "Convolutional Neural Networks: Lightweight Models",
+      "Recurrent Neural Networks: Sequential Data",
+      "Recurrent Neural Networks: RNN, GRU, and LSTM",
+      "Embeddings and Token Representations",
+      "Review"
+    ]
+  },
+  {
+    id: "project_digits_timeseries",
+    title: "Project Detail: Build Neural Networks for Classifying Digits and Time-Series Predictions",
+    mastery: "portfolio",
+    relevance: "project-practice",
+    tasks: [
+      "Review project instructions",
+      "Build digit classification portion",
+      "Build time-series prediction portion",
+      "Compare model behavior",
+      "Add notes on what worked",
+      "Add notes on what confused me",
+      "Complete project"
+    ]
+  },
+  {
+    id: "quiz_nn_arch_intro",
+    title: "Quiz Detail: Intro to Neural Network Architectures Quiz",
+    mastery: "complete",
+    relevance: "checkpoint",
+    tasks: [
+      "Review lesson notes before quiz",
+      "Take quiz",
+      "Log missed questions",
+      "Review weak spots",
+      "Complete quiz"
+    ]
+  }
+];
+
 const companionModules = [
   {
     id: "repo_setup",
@@ -378,7 +429,7 @@ function saveState() {
 }
 
 function getAllModules() {
-  return [...codecademyModules, ...companionModules];
+  return [...codecademyModules, ...lessonBreakdownModules, ...companionModules];
 }
 
 function taskKey(moduleId, taskIndex) {
@@ -509,6 +560,7 @@ function updateStats() {
 
 function rerender() {
   renderModules(codecademyModules, "codecademyModules");
+  renderModules(lessonBreakdownModules, "lessonBreakdownModules");
   renderModules(companionModules, "companionModules");
   updateStats();
 }
