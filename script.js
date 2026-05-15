@@ -231,18 +231,18 @@ const lessonBreakdownModules = [
     mastery: "understand",
     relevance: "foundational",
     tasks: [
-      "Welcome",
-      "What is a Neural Network Architecture?",
-      "Profiling Size, Latency, and Memory in PyTorch",
-      "Feedforward Neural Networks: Multi-Layer Perceptron",
-      "Generating Inferences",
-      "Activation and Normalization Layers",
-      "Convolutional Neural Networks: Processing Images",
-      "Convolutional Neural Networks: Lightweight Models",
-      "Recurrent Neural Networks: Sequential Data",
-      "Recurrent Neural Networks: RNN, GRU, and LSTM",
-      "Embeddings and Token Representations",
-      "Review"
+      { title: "Welcome", time: "3 min" },
+      { title: "What is a Neural Network Architecture?", time: "6 min" },
+      { title: "Profiling Size, Latency, and Memory in PyTorch", time: "40 min" },
+      { title: "Feedforward Neural Networks: Multi-Layer Perceptron", time: "46 min" },
+      { title: "Generating Inferences", time: "46 min" },
+      { title: "Activation and Normalization Layers", time: "53 min" },
+      { title: "Convolutional Neural Networks: Processing Images", time: "29 min" },
+      { title: "Convolutional Neural Networks: Lightweight Models", time: "45 min" },
+      { title: "Recurrent Neural Networks: Sequential Data", time: "36 min" },
+      { title: "Recurrent Neural Networks: RNN, GRU, and LSTM", time: "30 min" },
+      { title: "Embeddings and Token Representations", time: "25 min" },
+      { title: "Review", time: "2 min" }
     ]
   },
   {
@@ -257,7 +257,7 @@ const lessonBreakdownModules = [
       "Compare model behavior",
       "Add notes on what worked",
       "Add notes on what confused me",
-      "Complete project"
+      { title: "Complete project", time: "24 min" }
     ]
   },
   {
@@ -267,7 +267,7 @@ const lessonBreakdownModules = [
     relevance: "checkpoint",
     tasks: [
       "Review lesson notes before quiz",
-      "Take quiz",
+      { title: "Take quiz", time: "8 min" },
       "Log missed questions",
       "Review weak spots",
       "Complete quiz"
@@ -475,11 +475,16 @@ function renderModules(modules, containerId) {
         ${module.tasks.map((task, index) => {
           const key = taskKey(module.id, index);
           const checked = state.checked[key] ? "checked" : "";
+          const taskTitle = typeof task === "string" ? task : task.title;
+          const taskTime = typeof task === "string" ? "" : task.time;
 
           return `
             <label class="task">
               <input type="checkbox" data-module-id="${module.id}" data-task-index="${index}" ${checked} />
-              <span>${task}</span>
+              <span class="task-content">
+                <span class="task-title">${taskTitle}</span>
+                ${taskTime ? `<span class="task-time">${taskTime}</span>` : ""}
+              </span>
             </label>
           `;
         }).join("")}

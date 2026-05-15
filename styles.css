@@ -624,13 +624,33 @@ button:hover,
   accent-color: var(--pink);
 }
 
-.task span {
+.task-content {
   flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.55rem;
+  align-items: baseline;
 }
 
-.task input:checked + span {
+.task-title {
+  line-height: 1.45;
+}
+
+.task-time {
+  color: var(--mint);
+  font-size: 0.72rem;
+  font-weight: 900;
+  opacity: 0.85;
+  white-space: nowrap;
+}
+
+.task input:checked + .task-content .task-title {
   color: rgba(255, 255, 255, 0.55);
   text-decoration: line-through;
+}
+
+.task input:checked + .task-content .task-time {
+  opacity: 0.48;
 }
 
 .module-note {
